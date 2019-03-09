@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE components PUBLIC "-//SEASAR//DTD S2Container 2.4//EN"
+"http://www.seasar.org/dtd/components24.dtd">
+<components>
+
+	<!-- 個別のコンポーネント登録はコメントアウト -->
+	<!-- <component name="SampleService" class="com.github.asd0.Java_Seasar2_Sample.memo.service.impl.SampleServiceImpl"
+		/> <component name="SampleService2" class="com.github.asd0.Java_Seasar2_Sample.memo.service.impl.SampleService2Impl"
+		/> -->
+
+
+	<!-- コンポーネント自動登録設定 -->
+	<component
+		class="org.seasar.framework.container.autoregister.FileSystemComponentAutoRegister">
+		<property name="autoNaming">
+			<component
+				class="org.seasar.framework.container.autoregister.DefaultAutoNaming" />
+		</property>
+		<initMethod name="addClassPattern">
+			<arg>"com.github.asd0.Java_Seasar2_Sample.memo.service.impl"</arg>
+			<arg>".*Impl"</arg>
+		</initMethod>
+	</component>
+</components>
